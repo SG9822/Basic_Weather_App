@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Barlow&family=Nunito&family=Sono:wght@500&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://w7.pngwing.com/pngs/360/1005/png-transparent-exclamation-mark-computer-icons-interjection-question-mark-exclamation-point-monochrome-black-word.png">
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'error.css' %}">
+    <title>Sorry! For Inconvenience</title>
+</head>
+<body background = "{{url}}" style="background-repeat: no-repeat; 
+                                    background-size: cover">
+    <div class="error">
+        <h1> SORRY FOR YOUR INCONVENIENCE </h1>
+        <h2> SEARCHED PLACE IS NOT IN OUR DATABASE</h2>
+        <h3> PLEASE CHECK THE SPELLING </h3>
+    </div>
+    <h1 id="pls">Please Go to the <a href="{% url 'home' %}"> Search </a></h1>
+    
+</body>
+</html>

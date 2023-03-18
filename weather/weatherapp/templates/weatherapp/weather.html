@@ -1,0 +1,92 @@
+<!-- {% load static %} -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Barlow&family=Nunito&family=Sono:wght@500&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1779/1779940.png">
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'weather.css' %}">
+    <title>Basic Weather Report</title>
+</head>
+
+<body>
+        {% if weather_dtl == 'Haze' or weather_dtl == 'Mist' %}
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="{% static 'Haze.mp4' %}" type="video/mp4">
+            </video>   
+        {% elif weather_dtl == 'Clouds' %}
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="{% static 'Cloudy.mp4' %}" type="video/mp4">
+            </video>
+        {% elif weather_dtl == 'Rain' %}
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="{% static 'Rainy.mp4' %}" type="video/mp4">
+            </video>
+        {% elif weather_dtl == 'Thunderstorm' %}
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="{% static 'Rainy.mp4' %}" type="video/mp4">
+            </video>
+        {% else %}
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="{% static 'Clear.mp4' %}" type="video/mp4">
+            </video>
+        {% endif %}    
+            
+    <div class="container">
+        <div class="top-container">
+            <h1> <span style="font-size: 40px;">📌</span>{{reports}} </h1>
+        </div>
+        <div class="lat">
+            <h3>Lat: {{lat}}° </h3>
+        </div>
+        <div class="long">  
+            <h3>Long: {{long}}° </h3>
+        </div> 
+        
+        <div class="middle-container">
+            <h1> ☀️🔺- {{sun_rise}} (M)</h1>
+        </div>
+
+        <div class="down">
+            <h1> ☀️🔻- {{sun_dusk}} (E)</h1>
+        </div>
+
+        <div class="temp">
+            <h1> {{cur_temp}}°c<span style="font-size: 45px;">/{{weather}}</span></h1>
+        </div>
+
+        <div id="feel">
+            <div id="text1"> 
+                <h2> Feel like 🌡️ </h2>
+                <h2>{{feels_like}}°c</h2>
+            </div>
+        </div>
+
+        <div id="press">
+            <div id="text2">
+                <h2>Air Pressure 🗜 </h2>
+                <h2>{{cur_press}} hpa</h2>
+            </div>
+        </div>
+        
+        <div id="hum">
+            <div id="text3">
+                <h2> Humidity💧</h2>
+                <h2>{{cur_hum}}% </h2>
+            </div>
+        </div>
+
+        <div id="wind">
+            <div id="text4">
+                <h2> Wind 💨</h2>
+                <h2>{{cur_wind}} km  </h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

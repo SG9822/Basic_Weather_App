@@ -1,0 +1,38 @@
+body{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+.error{
+    position: absolute;
+    width: 45%;
+    height: 200;
+    margin: auto;
+    text-align: center;
+    top: 150px;
+    left: 400;
+    justify-content: center;
+    background-color: ghostwhite;
+    border-radius: 15px;
+    font-family: Tilt Neon;
+    text-shadow: 1px 1px 3px #666666;
+    padding-top: 10px;
+    box-shadow: 0px 1px 3px #666666;
+}
+
+h2{
+    padding: auto;
+}
+
+#pls{
+    position: absolute;
+    top: 350px;
+    text-align: center;
+    left: 500;
+    text-shadow: 1px 1px 3px #666666;
+    font-family: Sono;
+    padding-top: 10px;
+}
+
