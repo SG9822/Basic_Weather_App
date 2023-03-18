@@ -4,6 +4,8 @@ import json
 import datetime
 from suntime import Sun
 
+# THANKS TO OPENWEATHERMAP API
+#pls install suntime
 # Create your views here.
 url = ""
 def home(request):
@@ -23,7 +25,7 @@ def home(request):
 
 def weather(request):
     report = request.GET['place']
-    api_key = "7be6137ac110c92a1a951fb367841e60"
+    api_key = "Your API KEY"
     parameters = {
         'q': report,
         'appid': api_key,
